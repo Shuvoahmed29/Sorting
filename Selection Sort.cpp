@@ -1,29 +1,24 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
 using namespace std;
-int main()
-{
-    cout << "Enter number of elements: ";
-    int n;
-    cin >> n;
+int main(){
+    int n;  cin >> n;
     int arr[n];
-    cout << "Enter array elements: ";
-    for (int i = 0; i < n; i++)
+    for(int i=0; i<n; i++){
         cin >> arr[i];
-    int min = 0, index = -1;
-    for (int i = 0; i < n - 1; i++)
-    {
-        min = arr[i];
-        index = i;
-        for (int j = i + 1; j < n; j++)
-        {
-            if (arr[j] < min)
-            {
-                min = arr[j];
-                index = j;
+    }
+    for(int i=0;i<n;i++){
+        int min = arr[i];
+        int idx=i;
+        for(int j=i+1;j<n;j++){
+            if(arr[j]<min){
+                min=arr[j];
+                idx=j;
             }
         }
-        swap(arr[i], arr[index]);
+        swap(arr[i],arr[idx]);
     }
-    for (int i = 0; i < n; i++)
+    for(int i=0;i<n;i++){
         cout << arr[i] << " ";
+    }
+    cout << endl;
 }
